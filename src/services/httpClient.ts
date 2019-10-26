@@ -2,7 +2,7 @@ import * as request from 'request';
 
 export class HttpClient {
 
-    public get = (url: string): Promise<any> => {
+    public get = (url: string): Promise<request.Response> => {
         return new Promise((resolve, reject) => {
             request
                 .get(url)
@@ -15,7 +15,7 @@ export class HttpClient {
         });
     }
 
-    public post = (url: string, body: object): Promise<any> => {
+    public post = (url: string, body: object): Promise<request.Response> => {
         return new Promise((resolve, reject) => {
             request
                 .post({url, formData: body})

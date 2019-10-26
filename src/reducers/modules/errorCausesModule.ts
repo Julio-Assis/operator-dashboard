@@ -1,12 +1,12 @@
 import { createReducer } from 'redux-act';
 
-enum ErrorCausesTypes {
+export enum ErrorCausesTypes {
     GET_ERROR_CAUSES_REQUEST = '@@error_causes/GET_ERROR_CAUSES_REQUEST',
     GET_ERROR_CAUSES_SUCCESS = '@@error_causes/GET_ERROR_CAUSES_SUCCESS',
     GET_ERROR_CAUSES_ERROR = '@@error_causes/GET_ERROR_CAUSES_ERROR',
 }
 
-interface IErrorCause {
+export interface IErrorCause {
     id: number,
     name: string,
 }

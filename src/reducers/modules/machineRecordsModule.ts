@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-act';
 
 
-enum MachineRecordsTypes {
+export enum MachineRecordsTypes {
     GET_MACHINE_RECORDS_REQUEST = '@@machine_records/GET_MACHINE_RECORDS_REQUEST',
     GET_MACHINE_RECORDS_SUCCESS = '@@machine_records/GET_MACHINE_RECORDS_SUCCESS',
     GET_MACHINE_RECORDS_ERROR = '@@machine_records/GET_MACHINE_RECORDS_ERROR',
@@ -20,7 +20,7 @@ export interface IVariableRecord {
     timestamp: string,
 }
 
-interface IMachineRecord {
+export interface IMachineRecord {
     id: number,
     machine: number,
     status: boolean,
