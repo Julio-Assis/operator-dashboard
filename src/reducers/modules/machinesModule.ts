@@ -1,13 +1,13 @@
 import { createReducer } from 'redux-act';
 
 
-enum MachinesTypes {
+export enum MachinesTypes {
     GET_MACHINES_REQUEST = '@@machines/GET_MACHINES_REQUEST',
     GET_MACHINES_SUCCESS = '@@machines/GET_MACHINES_SUCCESS',
     GET_MACHINES_ERROR = '@@machines/GET_MACHINES_ERROR',
 }
 
-interface IMachine {
+export interface IMachine {
     id: number,
     name: string,
 }
