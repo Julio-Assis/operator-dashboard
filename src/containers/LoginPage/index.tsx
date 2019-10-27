@@ -23,7 +23,7 @@ export function LoginPage(props: ILoginPageProps) {
   const { getFieldDecorator } = props.form;
   return (
     <div style={{display: 'flex', justifyContent: 'center', height: '100%', alignItems: 'center'}}>
-      <Form onSubmit={handleSubmit} className="login-form" style={{width: "50%"}}>
+      <Form onSubmit={handleSubmit} className="login-form" style={{width: "80%", maxWidth: '450px'}}>
         <Form.Item>
           {getFieldDecorator('username', {
             rules: [{ required: true, message: 'Please input your username!' }],

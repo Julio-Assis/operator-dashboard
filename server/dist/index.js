@@ -23,10 +23,8 @@ app.use(cors_1.default());
 app.set("views", path_1.default.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.get("/records*", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("blah");
     const httpClient = new httpClient_1.HttpClient();
     const data = yield httpClient.get(`http://172.16.25.14:8000${req.path}`);
-    console.log(data);
     res.send(data);
 }));
 // define a route handler for the default home page

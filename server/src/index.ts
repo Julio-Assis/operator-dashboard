@@ -12,10 +12,8 @@ app.set( "views", path.join( __dirname, "views" ) );
 app.set( "view engine", "ejs" );
 
 app.get("/records*", async (req, res) => {
-    console.log("blah");
     const httpClient = new HttpClient();
     const data = await httpClient.get(`http://172.16.25.14:8000${req.path}`);
-    console.log(data);
     res.send(data);
 });
 
