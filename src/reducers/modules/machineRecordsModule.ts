@@ -71,13 +71,13 @@ export const getMachineRecordsError = (error: any): IGetMachineRecordsError => (
 
 export interface IMachineRecordState {
     isFetching: boolean,
-    machines: IMachineRecord[],
+    machineRecords: IMachineRecord[],
     error: any,
 }
 
 const initialState: IMachineRecordState = {
     isFetching: false,
-    machines: [],
+    machineRecords: [],
     error: null,
 } 
 
@@ -89,18 +89,18 @@ export const machineRecordsReducer = createReducer({
             isFetching: true
         };
     },
-    [MachineRecordsTypes.GET_MACHINE_RECORDS_SUCCESS]: (state: IMachineRecordState, action: IGetMachineRecordsSuccess) => {
+    [MachineRecordsTypes.GET_MACHINE_RECORDS_SUCCESS]: (state: IMachineRecordState, action: IGetMachineRecordsSuccess['payload']) => {
         return {
             ...state,
             isFetching: false,
-            machineRecords: action.payload.machineRecords,
+            machineRecords: action.machineRecords,
         }
     },
-    [MachineRecordsTypes.GET_MACHINE_RECORDS_ERROR]: (state: IMachineRecordState, action: IGetMachineRecordsError) => {
+    [MachineRecordsTypes.GET_MACHINE_RECORDS_ERROR]: (state: IMachineRecordState, action: IGetMachineRecordsError['payload']) => {
         return {
             ...state,
             isFetching: false,
-            error: action.payload.error
+            error: action.error
         }
     }
 }, initialState);

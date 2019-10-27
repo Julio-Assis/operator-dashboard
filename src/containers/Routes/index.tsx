@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { LoginPage, WrappedNormalLoginForm } from '../LoginPage';
 import { MachineParameters } from '../MachineParameters';
+import Test from '../Test';
 import logo from '../../logo.svg';
 
 
@@ -32,6 +33,9 @@ export function Routes() {
       </Route>
       <Route path='/machines'>
         <MachineParameters />
+      </Route>
+      <Route path='/test'>
+        <Test />
       </Route>
     </Router>
   );

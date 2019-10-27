@@ -12,5 +12,5 @@ export default function* rootSaga() {
         takeLatest(MachinesTypes.GET_MACHINES_REQUEST, getMachines),
         takeLatest(MachineRecordsTypes.GET_MACHINE_RECORDS_REQUEST, getMachineRecords),
         takeLatest(ErrorCausesTypes.GET_ERROR_CAUSES_REQUEST, getErrorCauses),
-    ])
+    ]);
 }

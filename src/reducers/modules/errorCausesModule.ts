@@ -69,18 +69,18 @@ export const errorCausesReducer = createReducer({
             isFetching: true
         };
     },
-    [ErrorCausesTypes.GET_ERROR_CAUSES_SUCCESS]: (state: IErrorCausesState, action: IGetErrorCausesSuccess) => {
+    [ErrorCausesTypes.GET_ERROR_CAUSES_SUCCESS]: (state: IErrorCausesState, action: IGetErrorCausesSuccess['payload']) => {
         return {
             ...state,
             isFetching: false,
-            errorCauses: action.payload.errorCauses,
+            errorCauses: action.errorCauses,
         }
     },
-    [ErrorCausesTypes.GET_ERROR_CAUSES_ERROR]: (state: IErrorCausesState, action: IGetErrorCausesError) => {
+    [ErrorCausesTypes.GET_ERROR_CAUSES_ERROR]: (state: IErrorCausesState, action: IGetErrorCausesError['payload']) => {
         return {
             ...state,
             isFetching: false,
-            error: action.payload.error
+            error: action.error
         }
     }
 }, initialState);

@@ -70,18 +70,18 @@ export const machinesReducer = createReducer({
             isFetching: true
         };
     },
-    [MachinesTypes.GET_MACHINES_SUCCESS]: (state: IMachineState, action: IGetMachinesSuccess) => {
+    [MachinesTypes.GET_MACHINES_SUCCESS]: (state: IMachineState, action: IGetMachinesSuccess['payload']) => {
         return {
             ...state,
             isFetching: false,
-            machines: action.payload.machines,
+            machines: action.machines,
         }
     },
-    [MachinesTypes.GET_MACHINES_ERROR]: (state: IMachineState, action: IGetMachinesError) => {
+    [MachinesTypes.GET_MACHINES_ERROR]: (state: IMachineState, action: IGetMachinesError['payload']) => {
         return {
             ...state,
             isFetching: false,
-            error: action.payload.error
+            error: action.error
         }
     }
 }, initialState);

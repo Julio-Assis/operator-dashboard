@@ -7,16 +7,13 @@ import {
 } from '../reducers/modules/machinesModule';
 
 
-export async function* getMachines() {
+export function* getMachines() {
     const httpClient = new HttpClient();
-    const response = await httpClient.get('http://172.16.25.14:8000/records/list-machines/');
-    if (response.statusCode === 200) {
-        console.log('checking');
-        console.log(response);
-        console.log(response.toJSON());
-        const machines: IMachine[] = response.toJSON() as any as IMachine[];
+    const response = yield call(httpClient.get,'http://localhost:8080/records/list-machines/');
+    if (response) {
+        const machines: IMachine[] = JSON.parse(response.toString());
         yield put(getMachinesSuccess(machines));
     } else {
-        yield put(getMachinesError(response.body));
+        yield put(getMachinesError(response));
     }
 }
